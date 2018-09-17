@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello world _ ch02</title>
+		<script src="../js/react.js" type="text/javascript"></script>
+		<script src="../js/react-dom.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="content"></div>
+		<br>
+		<br>
+		<div id="extends"></div>
+		<script type="text/javascript">
+			let h1 = React.createElement('h1', null, 'Hello world!!!'),
+				h2 = React.createElement('h2', null, 'Hello world2!'),
+				parentDiv = React.createElement('div', null, h1, h2),
+				testTag = React.createElement('test', null, h1, h2, h1);
+
+			ReactDOM.render(
+				// parentDiv,
+				testTag,
+				document.getElementById('content')
+			);
+
+			let h1Parent = React.createElement('h1', null, 'hello world! \n extends');
+			class HelloWorld extends React.Component {
+				render() {
+					return React.createElement('div', null, h1Parent, h1Parent);
+				}
+			}
+			ReactDOM.render(
+				React.createElement(HelloWorld, null),
+				document.getElementById('extends')
+			)
+		</script>
+	</body>
+</html>
