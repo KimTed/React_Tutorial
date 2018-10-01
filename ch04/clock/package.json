@@ -1,0 +1,22 @@
+{
+  "name": "clock",
+  "version": "1.0.0",
+  "description": "4.2�[리액트 교고서]\u001b[D\u001b[D\u001b[C_ 4��장]\u001b[3~\u001b[3~\u001b[3~\u001b[3~ 시계",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-auto": "./node_modules/.bin/babel ./jsx -d ./js -w"
+  },
+  "author": "ted",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-react": "^6.5.0"
+  },
+  "babel": {
+    "presets": ["react"]
+  }
+}
