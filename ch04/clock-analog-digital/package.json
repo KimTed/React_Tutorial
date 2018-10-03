@@ -1,0 +1,21 @@
+{
+  "name": "clock-analog-digital",
+  "version": "1.0.0",
+  "description": "시계 _ 아��날로그, 디지털",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/babel ./jsx -d ./js -w"
+  },
+  "author": "Ted",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-react": "^6.5.0"
+  },
+  "babel": {
+    "presets": ["react"]
+  }
+}
