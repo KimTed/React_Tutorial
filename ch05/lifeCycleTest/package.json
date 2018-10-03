@@ -1,0 +1,24 @@
+{
+  "name": "life_cycle_test",
+  "version": "1.0.0",
+  "description": "리액트 라이프사이클 테스트",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ted",
+  "license": "ISC",
+  "scripts": {
+    "build": "./node_modules/.bin/babel ./jsx -d ./js -w"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-react": "^6.5.0"
+  },
+  "babel": {
+    "presets": ["react"]
+  }
+}
