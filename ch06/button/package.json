@@ -1,7 +1,7 @@
 {
-  "name": "life_cycle_test",
+  "name": "event_handling",
   "version": "1.0.0",
-  "description": "리액트 라이프사이클 테스트",
+  "description": "6장 이벤트 다루기",
   "main": "index.js",
   "author": "Ted",
   "license": "ISC",
