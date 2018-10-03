@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-auto": "./node_modules/.bin/babel ./jsx -d ./js -w"
+    "build": "./node_modules/.bin/babel ./jsx -d ./js -w"
   },
   "author": "ted",
   "license": "ISC",
