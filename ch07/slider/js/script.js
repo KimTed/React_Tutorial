@@ -1,1 +1,0 @@
-ReactDOM.render(React.createElement(SliderButtons, null), document.getElementById('content'));
