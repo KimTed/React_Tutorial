@@ -1,0 +1,23 @@
+{
+  "name": "radio",
+  "version": "1.0.0",
+  "description": "React가 지원하지 않는 DOM 이벤트 처리하기 _radio Example",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/babel ./jsx -d ./js -w"
+  },
+  "author": "Ted",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-react": "^6.5.0"
+  },
+  "babel": {
+    "presets": [
+      "react"
+    ]
+  }
+}
