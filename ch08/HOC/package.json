@@ -1,0 +1,23 @@
+{
+  "name": "higher_order_component",
+  "version": "1.0.0",
+  "description": "8.4 코드 재사용을 위한 Ract 고차 컴포넌트",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/babel ./jsx -d ./js -w"
+  },
+  "author": "Ted",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-react": "^6.5.0"
+  },
+  "babel": {
+    "presets": [
+      "react"
+    ]
+  }
+}
