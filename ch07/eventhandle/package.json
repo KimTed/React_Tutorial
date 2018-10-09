@@ -1,0 +1,21 @@
+{
+  "name": "radio_event_handle",
+  "version": "1.0.0",
+  "description": "라디오 버튼의 렌더링과 변경 처리 _ 7.1",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/babel ./jsx -d ./js -w"
+  },
+  "author": "Ted",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-react": "^6.5.0"
+  },
+  "babel": {
+    "presets": ["react"]
+  }
+}

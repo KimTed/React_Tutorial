@@ -1,0 +1,21 @@
+{
+  "name": "account",
+  "version": "1.0.0",
+  "description": "대출 신청서의 계좌번호 영역 만들기_7,1,4",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/babel ./jsx -d ./js -w"
+  },
+  "author": "Ted",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-react": "^6.5.0"
+  },
+  "babel": {
+    "presets": ["react"]
+  }
+}
