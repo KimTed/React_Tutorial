@@ -1,0 +1,20 @@
+{
+  "name": "tooltip",
+  "version": "1.0.0",
+  "description": "Tooltip 컴포넌트 예제",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/babel script.jsx -o script.js -w"
+  },
+  "author": "Ted",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "react"
+    ]
+  },
+  "dependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-react": "^6.5.0"
+  }
+}
