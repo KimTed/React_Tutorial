@@ -41,7 +41,7 @@ class Menu extends React.Component {
 
 // function 형식 _ refactoring (컴포넌트에 this.state와 lifeCycle이 없으면 함수형으로 refactoring 이 가능
 const Link = (props) => {
-    let url = "/" + props.label.toLowerCase().trim().replace(" ", "-");
+    let url = "/" + props.label.toLowerCase().trim().replace(/ /g, "-");
 
     return (
         <div>
