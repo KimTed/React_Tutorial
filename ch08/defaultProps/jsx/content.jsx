@@ -16,7 +16,7 @@ Buttons.propTypes = {
     title: PropTypes.String,
     email(Props, propName, ComponentName) {
         let emailRegularExpression = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-        if (!emailRegularExpression.test(Props[propName])) {
+        if (Props[propName] && !emailRegularExpression.test(Props[propName])) {
             return new Error("Email validation failed!");
         }
     }
