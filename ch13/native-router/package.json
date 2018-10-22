@@ -1,0 +1,30 @@
+{
+  "name": "native-router",
+  "version": "1.0.0",
+  "description": "Router 구현",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack -w",
+    "wds": "./node_modules/.bin/webpack-dev-server --config webpack.dev.config.js"
+  },
+  "author": "Ted",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      "react"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "6.13.2",
+    "babel-loader": "6.4.1",
+    "babel-preset-react": "6.5.0",
+    "webpack": "2.4.1",
+    "react": "15.5.4",
+    "react-dom": "15.5.4",
+    "css-loader": "0.23.1",
+    "react-hot-loader": "1.3.1",
+    "style-loader": "0.13.1",
+    "webpack-dev-server": "2.4.2"
+  }
+}
