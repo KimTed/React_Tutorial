@@ -1,4 +1,4 @@
-module.exports={
+module.exports = {
     entry: './jsx/app.jsx',
     output: {
         path: __dirname + '/js/',
@@ -12,14 +12,10 @@ module.exports={
     module: {
         loaders: [
             {
-            test: /\.css$/,
-            loader: 'style-loader!css-loader'
-            },
-            {
-            test: /\.jsx?$/,
-            exclude: /(node_modules)/,
-            loaders: ['babel-loader']
+                test: /\.jsx?$/,
+                exclude: /(node_modules)/,
+                loader: 'babel-loader'
             }
         ]
     }
-}
+};
