@@ -1,4 +1,5 @@
 const ReactRouter = require('react-router'),
+      ReactDOM = require ('react-dom')
       //{hashHistory} = require('react-router'),    //React Router에 포함된 해시 히스토리
       History = require('history');
 
@@ -8,7 +9,7 @@ let {Router, Route, Link} = ReactRouter,
                 });
 
 ReactDOM.render(
-    <Router history={hashHistory}}>
+    <Router history={hashHistory}>
         <Route path="/" component={Content}>
             <Route path="/about" component={About}/>
             <Route path="/posts" component={posts}/>
