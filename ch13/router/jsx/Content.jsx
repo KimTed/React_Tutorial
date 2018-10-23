@@ -13,7 +13,7 @@ class Content extends React.Component {
                                 About
                             </Link>
                         </li>
-                        <li className-{(this.context.router.isActive('/posts')) ? 'active' : ''}>
+                        <li className={(this.context.router.isActive('/posts')) ? 'active' : ''}>
                             <Link to="/posts" activeClassName="active">
                                 Blog
                             </Link>
@@ -38,19 +38,8 @@ class Content extends React.Component {
 
 // 정적 클래스 속성으로 contextTypes를 설정하여 this.context.router로 접근 하는 방법
 Content.contextTypes = {
-    router: React.ProtoTypes.object.isRequired
+    //router: React.ProtoTypes.object.isRequired
+    router: React.PropTypes.object.isRequired
 };
 
-module.exports = function Content(props) {
-    setTimeout(() => {
-        props.router.push('about')
-        }, 1000);
-    return (
-        <div>
-            <h3>Contact Us</h3>
-            <input type="text" placeholder="your email" className="form-control"/>
-            <textarea type="text" placeholder="your message" className="form-control"/>
-            <button className="btn btn-primary">send</button>
-        </div>
-    );
-};
+module.exports = Content;
