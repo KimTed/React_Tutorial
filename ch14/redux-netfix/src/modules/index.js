@@ -1,10 +1,12 @@
+/*
 const React = require('react'),
       {render} = require('react-dom'),
       {Provider} = require('react-redux'),
       {createStore} = require('react-redux'),
       reducers = require('./modules'),
-      routes = require('./routes'),
-      {combineReducers} = require('redux'),
+      routes = require('./routes');
+*/
+const {combineReducers} = require('redux'),
       {
         reducer: movies
       } = require('./movies');
@@ -12,7 +14,7 @@ const React = require('react'),
 module.exports = combineReducers({
     movies
 });
-
+/*
 module.exports = render(
     (
         <Provider store={createStore(reducers)}>
@@ -21,3 +23,4 @@ module.exports = render(
     ),
     document.getElementById('app')
 );
+*/

@@ -4,9 +4,9 @@ const React = require('react'),
         IndexRoute,
         browserHistory
       } = require('react-router'),
-      App = require('components/app/app.js'),
-      Movies = require('components/movies/movies.js'),
-      Movie = require('components/movie/movie.js');
+      App = require('components/App/app.js'),
+      Movies = require('components/Movies/movies.js'),
+      Movie = require('components/Movie/movie.js');
 
 module.exports = (
     <Router history={browserHistory}>

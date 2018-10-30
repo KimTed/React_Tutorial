@@ -23,7 +23,7 @@ module.exports = {
                 query: {presets: ['react', 'es2015', 'stage-0']}
             },{
                 loader: 'json-loader',
-                test: /\.js%/
+                test: /\.json$/
             },{
                 loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[local]__[hash:base64:5]'),
                 test: /\.css$/,
