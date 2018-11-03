@@ -31921,9 +31921,9 @@
 	    Route = _require.Route,
 	    IndexRoute = _require.IndexRoute,
 	    browserHistory = _require.browserHistory,
-	    App = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"components/App/app.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
-	    Movies = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"components/Movies/movies.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
-	    Movie = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"components/Movie/movie.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	    App = __webpack_require__(597),
+	    Movies = __webpack_require__(602),
+	    Movie = __webpack_require__(606);
 
 
 	module.exports = React.createElement(
@@ -37443,6 +37443,493 @@
 
 	exports.default = (0, _createRouterHistory2.default)(_createHashHistory2.default);
 	module.exports = exports['default'];
+
+/***/ },
+/* 597 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var React = __webpack_require__(329);
+
+	var _require = __webpack_require__(499),
+	    connect = _require.connect;
+
+	var styles = __webpack_require__(598);
+
+	var App = function (_React$Component) {
+	  _inherits(App, _React$Component);
+
+	  function App() {
+	    _classCallCheck(this, App);
+
+	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+	  }
+
+	  _createClass(App, [{
+	    key: 'render',
+	    value: function render() {
+	      var children = this.props.children;
+
+
+	      return React.createElement(
+	        'div',
+	        { className: styles.app },
+	        children
+	      );
+	    }
+	  }]);
+
+	  return App;
+	}(React.Component);
+
+	module.exports = connect()(App);
+
+/***/ },
+/* 598 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"app":"app__1ebwe"};
+
+/***/ },
+/* 599 */,
+/* 600 */,
+/* 601 */,
+/* 602 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var React = __webpack_require__(329),
+	    _require = __webpack_require__(499),
+	    connect = _require.connect,
+	    _require2 = __webpack_require__(536),
+	    Link = _require2.Link,
+	    movies = __webpack_require__(603),
+	    _require3 = __webpack_require__(528),
+	    fetchMoviesActionCreator = _require3.fetchMoviesActionCreator,
+	    styles = __webpack_require__(604);
+
+	var Movies = function (_React$Component) {
+	    _inherits(Movies, _React$Component);
+
+	    function Movies() {
+	        _classCallCheck(this, Movies);
+
+	        return _possibleConstructorReturn(this, (Movies.__proto__ || Object.getPrototypeOf(Movies)).apply(this, arguments));
+	    }
+
+	    _createClass(Movies, [{
+	        key: 'componentWillMount',
+	        value: function componentWillMount() {
+	            this.props.fetchMovies(movies);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props,
+	                children = _props.children,
+	                _props$movies = _props.movies,
+	                movies = _props$movies === undefined ? [] : _props$movies,
+	                _props$params = _props.params,
+	                params = _props$params === undefined ? {} : _props$params;
+
+
+	            return React.createElement(
+	                'div',
+	                { className: styles.movies },
+	                React.createElement(
+	                    'div',
+	                    { className: params.id ? styles.listHidden : styles.list },
+	                    movies.map(function (movie, index) {
+	                        return React.createElement(
+	                            Link,
+	                            { key: index, to: '/movies/${index + 1}' },
+	                            React.createElement('div', { className: styles.movie, style: { backgroundImage: 'url(' + movie.cover + ')' } })
+	                        );
+	                    })
+	                ),
+	                children
+	            );
+	        }
+	    }]);
+
+	    return Movies;
+	}(React.Component);
+
+	module.exports = connect(function (_ref) {
+	    var movies = _ref.movies;
+	    return {
+	        movies: movies.all
+	    };
+	}, {
+	    //fetchMoviesActionCreator
+	    fetchMovies: fetchMoviesActionCreator
+	})(Movies);
+
+/***/ },
+/* 603 */
+/***/ function(module, exports) {
+
+	module.exports = [
+		{
+			"title": "Pirates of the Caribbean: On Stranger Tides",
+			"cover": "/images/On_Stranger_Tides_Poster.jpg",
+			"year": "2011",
+			"cost": 378.5,
+			"starring": [
+				{
+					"name": "Johnny Depp"
+				},
+				{
+					"name": "Penélope Cruz"
+				},
+				{
+					"name": "Ian McShane"
+				},
+				{
+					"name": "Kevin R. McNally"
+				},
+				{
+					"name": "Geoffrey Rush"
+				}
+			]
+		},
+		{
+			"title": "Pirates of the Caribbean: At World's End",
+			"cover": "/images/Pirates_AWE_Poster.jpg",
+			"year": "2007",
+			"cost": 300,
+			"starring": [
+				{
+					"name": "Johnny Depp"
+				},
+				{
+					"name": "Orlando Bloom"
+				},
+				{
+					"name": "Keira Knightley"
+				},
+				{
+					"name": "Geoffrey Rush"
+				},
+				{
+					"name": "Stellan Skarsgård"
+				}
+			]
+		},
+		{
+			"title": "Avengers: Age of Ultron",
+			"cover": "/images/Avengers_Age_of_Ultron.jpg",
+			"year": "2015",
+			"cost": 279.9,
+			"starring": [
+				{
+					"name": "Robert Downey Jr."
+				},
+				{
+					"name": "Chris Hemsworth"
+				},
+				{
+					"name": "Mark Ruffalo"
+				},
+				{
+					"name": "Chris Evans"
+				},
+				{
+					"name": "Scarlett Johansson"
+				}
+			]
+		},
+		{
+			"title": "John Carter",
+			"cover": "/images/John_carter_poster.jpg",
+			"year": "2012",
+			"cost": 263.7,
+			"starring": [
+				{
+					"name": "Taylor Kitsch"
+				},
+				{
+					"name": "Lynn Collins"
+				},
+				{
+					"name": "Samantha Morton"
+				},
+				{
+					"name": "Mark Strong"
+				},
+				{
+					"name": "Ciarán Hinds"
+				}
+			]
+		},
+		{
+			"title": "Tangled",
+			"cover": "/images/Tangled_poster.jpg",
+			"year": "2010",
+			"cost": 260,
+			"starring": [
+				{
+					"name": "Mandy Moore"
+				},
+				{
+					"name": "Zachary Levi"
+				},
+				{
+					"name": "Donna Murphy"
+				}
+			]
+		},
+		{
+			"title": "Spider-Man 3",
+			"cover": "/images/Spider-Man_3%2C_International_Poster.jpg",
+			"year": "2007",
+			"cost": 258,
+			"starring": [
+				{
+					"name": "Tobey Maguire"
+				},
+				{
+					"name": "Kirsten Dunst"
+				},
+				{
+					"name": "James Franco"
+				},
+				{
+					"name": "Thomas Haden Church"
+				},
+				{
+					"name": "Topher Grace"
+				}
+			]
+		},
+		{
+			"title": "Harry Potter and the Half-Blood Prince",
+			"cover": "/images/harry-potter-and-the-half-blood-prince.jpg",
+			"year": "2009",
+			"cost": 250,
+			"starring": [
+				{
+					"name": "Daniel Radcliffe"
+				},
+				{
+					"name": "Rupert Grint"
+				},
+				{
+					"name": "Emma Watson"
+				},
+				{
+					"name": "Jim Broadbent"
+				},
+				{
+					"name": "Helena Bonham Carter"
+				}
+			]
+		},
+		{
+			"title": "Spectre",
+			"cover": "/images/MV5BMjIwNTA1MDA2Ml5BMl5BanBnXkFtZTgwNzIzMTA5NDE@._V1_SX640_SY720_.jpg",
+			"year": "2015",
+			"cost": 245,
+			"starring": [
+				{
+					"name": "Daniel Craig"
+				},
+				{
+					"name": "Christoph Waltz"
+				},
+				{
+					"name": "Léa Seydoux"
+				},
+				{
+					"name": "Ben Whishaw"
+				},
+				{
+					"name": "Naomie Harris"
+				}
+			]
+		},
+		{
+			"title": "Avatar",
+			"cover": "/images/Avatar-Teaser-Poster.jpg",
+			"year": "2009",
+			"cost": 237,
+			"starring": [
+				{
+					"name": "Sam Worthington"
+				},
+				{
+					"name": "Zoe Saldana"
+				},
+				{
+					"name": "Stephen Lang"
+				},
+				{
+					"name": "Michelle Rodriguez"
+				},
+				{
+					"name": "Sigourney Weaver"
+				}
+			]
+		},
+		{
+			"title": "The Dark Knight Rises",
+			"cover": "/images/Dark_knight_rises_poster.jpg",
+			"year": "2012",
+			"cost": 230,
+			"starring": [
+				{
+					"name": "Christian Bale"
+				},
+				{
+					"name": "Michael Caine"
+				},
+				{
+					"name": "Gary Oldman"
+				},
+				{
+					"name": "Anne Hathaway"
+				},
+				{
+					"name": "Tom Hardy"
+				}
+			]
+		}
+	];
+
+/***/ },
+/* 604 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"movies":"movies__1Rnmy","list":"list__JTN7d","listHidden":"listHidden__3GCEn","movie":"movie__31iGd"};
+
+/***/ },
+/* 605 */,
+/* 606 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var React = __webpack_require__(329),
+	    _require = __webpack_require__(499),
+	    connect = _require.connect,
+	    _require2 = __webpack_require__(536),
+	    Link = _require2.Link,
+	    _require3 = __webpack_require__(528),
+	    fetchMovieActionCreator = _require3.fetchMovieActionCreator,
+	    styles = __webpack_require__(607);
+
+	var Movie = function (_React$Component) {
+	    _inherits(Movie, _React$Component);
+
+	    function Movie() {
+	        _classCallCheck(this, Movie);
+
+	        return _possibleConstructorReturn(this, (Movie.__proto__ || Object.getPrototypeOf(Movie)).apply(this, arguments));
+	    }
+
+	    _createClass(Movie, [{
+	        key: 'componentWillMount',
+	        value: function componentWillMount() {
+	            this.props.fetchMovie(this.props.param.id);
+	        }
+	    }, {
+	        key: 'componentWillUpdate',
+	        value: function componentWillUpdate(next) {
+	            if (this.props.params.id !== next.params.id) this.props.fetchMovie(next.params.id);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _props$movie = this.props.movie,
+	                movie = _props$movie === undefined ? { starring: [] } : _props$movie;
+
+
+	            return React.createElement(
+	                'div',
+	                { className: styles.movie, stylese: { backgroundImage: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.625) 100%), url(${movie.cover})' } },
+	                React.createElement('div', { className: styles.cover, style: { backgroundImage: 'url(' + movie.cover + ')' } }),
+	                React.createElement(
+	                    'div',
+	                    { className: styles.description },
+	                    React.createElement(
+	                        'div',
+	                        { className: styles.title },
+	                        movie.title
+	                    ),
+	                    React.createElement(
+	                        'div',
+	                        { className: styles.year },
+	                        movie.year
+	                    ),
+	                    React.createElement(
+	                        'div',
+	                        { className: styles.starring },
+	                        movie.starring.map(function () {
+	                            var actor = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+	                            var index = arguments[1];
+	                            return React.createElement(
+	                                'div',
+	                                { key: index, className: styles.actor },
+	                                actor.name
+	                            );
+	                        })
+	                    )
+	                ),
+	                React.createElement(
+	                    Link,
+	                    { className: styles.closeButton, to: '/movies' },
+	                    '\u2190'
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Movie;
+	}(React.Component);
+
+	module.exports = connect(function (_ref) {
+	    var movies = _ref.movies;
+	    return {
+	        movie: movies.current
+	    };
+	}, {
+	    fetchMovie: fetchMovieActionCreator
+	})(Movie);
+
+/***/ },
+/* 607 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"movie":"movie__2pQ8U","cover":"cover__vyfoE","description":"description__3zfsG","title":"title__1Ne8V","year":"year__1yWPm","starring":"starring__254DS","actor":"actor__1ZMdK","closeButton":"closeButton__2ly7U"};
 
 /***/ }
 /******/ ]);

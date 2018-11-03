@@ -18,8 +18,8 @@ class Movie extends React.Component {
         const {movie={starring:[]}} = this.props;
 
         return(
-            <div className={styles.movie} style={{backgroundImage: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.625) 100%), url(${movie.cover})'}}>
-                <div className={styles.cover} style={{backgroundImage: 'url(${movie.cover})'}} />
+            <div className={styles.movie} stylese={{backgroundImage: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.625) 100%), url(${movie.cover})'}}>
+                <div className={styles.cover} style={{backgroundImage: `url(${movie.cover})`}} />
                 <div className={styles.description}>
                     <div className={styles.title}>{movie.title}</div>
                     <div className={styles.year}>{movie.year}</div>
@@ -32,7 +32,7 @@ class Movie extends React.Component {
                     </div>
                 </div>
                 <Link className={styles.closeButton} to="/movies">
-                    <-
+                    ←
                 </Link>
             </div>
         );
@@ -40,5 +40,5 @@ class Movie extends React.Component {
 }
 
 module.exports = connect(state => ({
-        movie: state.movie.current
+        movie: state.movies.current
     }), {fetchMovie: fetchMovieActionCreator})(Movie);
