@@ -37858,7 +37858,7 @@
 	    _createClass(Movie, [{
 	        key: 'componentWillMount',
 	        value: function componentWillMount() {
-	            this.props.fetchMovie(this.props.param.id);
+	            this.props.fetchMovie(this.props.params.id);
 	        }
 	    }, {
 	        key: 'componentWillUpdate',
@@ -37874,7 +37874,7 @@
 
 	            return React.createElement(
 	                'div',
-	                { className: styles.movie, stylese: { backgroundImage: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.625) 100%), url(${movie.cover})' } },
+	                { className: styles.movie, style: { backgroundImage: 'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.625) 100%), url(${movie.cover})' } },
 	                React.createElement('div', { className: styles.cover, style: { backgroundImage: 'url(' + movie.cover + ')' } }),
 	                React.createElement(
 	                    'div',
@@ -37915,14 +37915,11 @@
 	    return Movie;
 	}(React.Component);
 
-	module.exports = connect(function (_ref) {
-	    var movies = _ref.movies;
+	module.exports = connect(function (state) {
 	    return {
-	        movie: movies.current
+	        movie: state.movies.current
 	    };
-	}, {
-	    fetchMovie: fetchMovieActionCreator
-	})(Movie);
+	}, { fetchMovie: fetchMovieActionCreator })(Movie);
 
 /***/ },
 /* 607 */

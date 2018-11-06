@@ -40,7 +40,7 @@ module.exports = {
             ...state,
             all: action.movies
         }),
-        [FETCH_MOVIE]: (state,action) => ({
+        [FETCH_MOVIE]: (state, action) => ({
             ...state,
             current: state.all[action.index - 1]
         })
