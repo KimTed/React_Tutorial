@@ -5,7 +5,7 @@
     "scripts": {
         "build": "./node_modules/.bin/webpack --config webpack.config.js",
         "watch": "./node_modules/.bin/webpack --config webpack.config.js --watch",
-        "devserver": "./node_modules/.bin/webpack-dev-server --config webpack.dev.config.js"
+        "dev": "./node_modules/.bin/webpack-dev-server --config webpack.dev.config.js"
     },
     "author": "apple77y@gmail.com",
     "license": "ISC",
